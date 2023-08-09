@@ -21,7 +21,8 @@ func TestShowIndexPageUnauthenticated(t *testing.T) {
 		statusOK := w.Code == http.StatusOK
 
 		// Test that the page title is "Home Page"
-
+		// You can carry out a lot more detailed tests using libraries that can
+		// parse and process HTML pages
 		p, err := ioutil.ReadAll(w.Body)
 		pageOK := err == nil && strings.Index(string(p), "<title>Home Page</title>") > 0
 
